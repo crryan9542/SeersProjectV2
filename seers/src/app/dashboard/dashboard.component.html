@@ -1,0 +1,8 @@
+<h2>Top Prophecies<h2>
+<div class="prophecies-menu">
+  <a *ngFor="let prophecy of prophecies"
+    routerLink="/detail/{{prophecy.id}}">
+    {{prophecy.name}}
+  </a>
+</div>
+<app-prophecy-search></app-prophecy-search>

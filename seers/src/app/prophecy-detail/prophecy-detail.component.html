@@ -1,0 +1,22 @@
+<div *ngIf="prophecy">
+
+    <h2>{{prophecy.name | uppercase}} Details</h2>
+    <div><span>id: </span>{{prophecy.id}}</div>
+    <div>
+      <label for="prophecy-name">Prophecy name: </label> {{prophecy.name}}
+      <div>
+
+      </div>
+      <label for="prophecy-description">Prophecy description: </label> {{prophecy.description}}
+      <div>
+
+      </div>
+        <label for="prophecy-price">Prophecy price: </label> {{prophecy.price}}
+        <div>
+
+        <label for="prophecy-quantity">Prophecy quantity: </label> {{prophecy.quantity}}
+
+
+    </div>
+  <button type="button" (click)="goBack()">Back</button>
+  </div>

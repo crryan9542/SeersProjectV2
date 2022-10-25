@@ -1,0 +1,27 @@
+<div *ngIf="prophecy">
+
+    <h2>{{prophecy.name | uppercase}} Details</h2>
+    <div><span>id: </span>{{prophecy.id}}</div>
+    <div>
+      <label for="prophecy-name">Prophecy name: </label>
+      <input id="prophecy-name" [(ngModel)]="prophecy.name" placeholder="name">
+    </div>
+    <div>
+        <label for="prophecy-description">Prophecy description: </label>
+        <input id="prophecy-description" [(ngModel)]="prophecy.description" placeholder="description">
+    </div>
+    <div>
+        <label for="prophecy-price">Prophecy price: </label>
+        <input id="prophecy-price" [(ngModel)]="prophecy.price" placeholder="price">
+    </div>
+    <div>
+        <label for="prophecy-quantity">Prophecy quantity: </label>
+        <input id="prophecy-quantity" [(ngModel)]="prophecy.quantity" placeholder="quantity">
+    </div>
+
+
+<button type="button" (click)="goBack()">Back</button>
+<button type="button" (click)="save()">Save</button>
+
+
+  </div>

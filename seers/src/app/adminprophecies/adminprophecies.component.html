@@ -1,0 +1,51 @@
+<h2>Current Prophecies:</h2>
+<ul class="prophecies">
+    <li *ngFor="let prophecy of prophecies">
+      <a routerLink="/admin-detail/{{prophecy.id}}">
+        <span class="badge">{{prophecy.id}}</span> {{prophecy.name}}
+      </a>
+      <button type="button" class="delete" title="delete prophecy"
+  (click)="delete(prophecy)">x</button>
+    </li>
+  </ul>
+
+
+  <h3> ADD NEW PROPHECIES: </h3>
+
+  <div>
+    <label for="prophecy-id">prophecy ID: </label>
+    <input id="prophecy-id" #newID/>
+</div>
+<div>
+    <label for="prophecy-name">prophecy Name: </label>
+    <input id="prophecy-name" #newname/>
+</div>
+<div>
+    <label for="prophecy-desc">prophecy Description: </label>
+    <input id="prophecy-desc" #newdescription/>
+  </div>
+  <div>
+    <label for="prophecy-price">prophecy Price ($): </label>
+    <input id="prophecy-price" #newprice />
+  </div>
+  <div>
+    <label for="prophecy-quantity">prophecy Quantity: </label>
+    <input id="prophecy-quantity" #newquantity />  
+  </div>
+  <button type="button" (click)="add(parseInt(newID), newname.value, toString(newdescription), parseInt(newprice), parseInt(newquantity))">Add</button>
+
+
+<h3> DELETE SELECTED PROPHECY: </h3>
+
+  <div>
+    <label for="removed-prophecy">Enter ID of prophecy to be deleted: </label>
+    <input id="removed-prophecy" #removedProphecyID/>
+</div>
+
+<button type="button" (click)="removeProduct(parseInt(removedProphecyID))">Delete</button>
+
+
+
+
+
+

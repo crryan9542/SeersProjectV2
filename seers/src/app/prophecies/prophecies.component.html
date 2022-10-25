@@ -1,0 +1,26 @@
+<!-- <h2>{{prophecy.name}}</h2> -->
+<!-- <div><span>id:</span>{{prophecy.id}}</div>
+<div><span>name:</span>{{prophecy.name}}</div>
+<div><span>description:</span>{{prophecy.description}}</div>
+<div><span>price:</span>{{prophecy.price}}</div>
+<div><span>quantity:</span>{{prophecy.quantity}}</div> -->
+
+<h2>Prophecy List</h2>
+<ul class="prophecies">
+    <li *ngFor="let prophecy of prophecies">
+      <a routerLink="/detail/{{prophecy.id}}">
+        <span class="badge">{{prophecy.id}}</span> {{prophecy.name}}
+      </a>
+    </li>
+  </ul>
+
+  <!-- <div>
+    <label for="new-prophecy">Prophecy name: </label>
+    <input id="new-prophecy" #prophecyName />
+  
+    <!-- (click) passes input value to add() and then clears the input -->
+    <!-- <button type="button" class="add-button" (click)="add(prophecyName.value); prophecyName.value=''">
+      Add Prophecy
+    </button> -->
+  <!-- </div> --> 
+
