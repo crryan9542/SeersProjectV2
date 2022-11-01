@@ -4,14 +4,13 @@ import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
+import { Prophecy } from './prophecy';
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
   httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
   private usersUrl = 'http://localhost:8080/users';  // URL to web api
-
-
 
 
   getUsers(): Observable<User[]> {

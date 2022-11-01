@@ -1,0 +1,8 @@
+
+
+<h1>Your cart:</h1>
+<div class="cart-item" *ngFor="let item of items">
+  <span>{{ item.name }}</span>
+  <span>{{ item.price | currency }}</span>
+  <button type="button" (click)="removeFromCart(item)">Remove</button>
+</div> 

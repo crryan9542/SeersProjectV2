@@ -13,6 +13,7 @@ import { ProphecySearchComponent } from './prophecy-search/prophecy-search.compo
 import { AdminpropheciesComponent } from './adminprophecies/adminprophecies.component';
 import { AdminDetailComponent } from './admin-detail/admin-detail.component';
 import { LoginComponent } from './login/login.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { LoginComponent } from './login/login.component';
     AdminpropheciesComponent,
     AdminDetailComponent,
     LoginComponent,
+    CartComponent,
     
   ],
   imports: [

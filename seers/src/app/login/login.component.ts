@@ -4,6 +4,7 @@ import { MessageService } from '../message.service';
 import { ProphecyService } from '../prophecy.service';
 import { User } from '../user';
 import { UserService } from '../user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,9 +13,9 @@ import { UserService } from '../user.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private userService: UserService, private messageService: MessageService) { }
+  constructor(private userService: UserService, private messageService: MessageService, private router: Router) { }
 
-currentUsername: string = "";
+currentUsername: String = "";
 users: User[] = [];
 
   ngOnInit(): void {
@@ -24,15 +25,17 @@ users: User[] = [];
     return _t65.value;
   }
 
+  
   login(username: string, password: string): void{
     if(username == "admin" && password == "admin"){
       this.messageService.add("Successfully logged in as admin");
-      window.location.href = 'http://localhost:4200/adminprophecies';
+      this.router.navigate(['/adminprophecies']);
+      // window.location.href = 'http://localhost:4200/adminprophecies';
     }
     else{
-      username = this.currentUsername; 
-      this.messageService.add("Successfully logged in as user" + username);
-      window.location.href = 'http://localhost:4200/prophecies';
+      this.router.navigate(['/prophecies/']);
+      this.messageService.add("Successfully logged in as user: " + username);
+      this.currentUsername = username;
     }
   }
 
@@ -44,20 +47,22 @@ users: User[] = [];
     if (!username || !password) { return; }
     this.userService.addUser({ username, password } as User).subscribe(user => {
       this.users.push(user);
-    } 
-    
-    );
-
-
-
-
+    } );
 this.messageService.add("Successfully registered as user" + username);
+}
 
 
-
-
-
-
+showCart(username: String): void {
+if(username == "admin"){
+  this.messageService.add("Admin cannot view cart");
+} else {
+  this.messageService.add("Showing cart for user: " + username);
+  this.router.navigate(['/cart/' + username]);
+  this.currentUsername = username;
+}
 
 }
+
+
+
 }

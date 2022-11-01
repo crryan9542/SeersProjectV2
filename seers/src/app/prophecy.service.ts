@@ -10,6 +10,7 @@ import { catchError, map, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ProphecyService {
+  
   httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
   private propheciesUrl = 'http://localhost:8080/prophecies';  // URL to web api
 
